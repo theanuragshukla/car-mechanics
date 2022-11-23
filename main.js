@@ -17,7 +17,7 @@ const car = new Car({
 		x:5,
 		y:5
 	}, 
-	width:50, 
+	width:100, 
 	height:100
 })
 const animate = () => {

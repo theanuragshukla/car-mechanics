@@ -10,14 +10,19 @@ class Car{
 		this.maxSpeed = 10
 		this.steer = 0.04
 		this.controls = new Controls()
+		const img = new Image()
+		img.src = "./sprites/sprite1.png";
+		img.onload=()=>{
+			this.img = img
+		}
 	}
 
 	draw(){
-		ctx.fillStyle = '#000'
+		//ctx.fillStyle = '#000'
 		ctx.save()
 		ctx.translate(this.position.x, this.position.y)
 		ctx.rotate(-this.angle)
-		ctx.rect(-(this.width/2), -(this.height/2), this.width, this.height)
+		ctx.drawImage(this.img, -(this.width/2), -this.height/2, this.width, this.height);
 		ctx.restore()
 		ctx.fill()
 	}
